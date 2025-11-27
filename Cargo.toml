@@ -10,7 +10,7 @@ edition = "2021"
 omnisette = { git = "https://github.com/SideStore/apple-private-apis.git", features = ["async"] }
 
 actix = "0.13"
-actix-web = { version = "4", features = ["openssl"] }
+actix-web = { version = "4.2.1", features = ["openssl"] }
 openssl = { version = "0.10", features = ["vendored"] }
 actix-web-actors = "4"
 
