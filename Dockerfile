@@ -10,6 +10,8 @@ COPY Cargo.* ./
 
 COPY src ./src
 
+RUN cargo update
+
 ENV CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
 
 RUN cargo build --release
