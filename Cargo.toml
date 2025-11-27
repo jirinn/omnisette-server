@@ -11,7 +11,7 @@ omnisette = { git = "https://github.com/SideStore/apple-private-apis.git", featu
 
 actix = "0.13"
 actix-web = { version = "4.2.1", features = ["openssl"] }
-actix-http = "3.0.0"
+actix-http = "3.0.1"
 openssl = { version = "0.10", features = ["vendored"] }
 actix-web-actors = "4"
 
