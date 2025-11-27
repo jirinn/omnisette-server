@@ -43,9 +43,19 @@ clap = { version = "4.1", features = ["derive"] }
 log = "0.4"
 simplelog = "0.12"
 
-# Transitive Fixes (preventing other libraries from pulling new versions)
+# Transitive Fixes (ICU / Internationalization)
 icu_list = "=1.2.0" 
 icu_provider = "=1.2.0"
+icu_locid = "=1.2.0"
+
+# --- NEW: LOW-LEVEL ICU UTILITIES PINS ---
+# These are the specific libraries causing the current error
+yoke = "=0.7.1"
+zerofrom = "=0.1.2"
+zerovec = "=0.9.4"
+litemap = "=0.7.0"
+tinystr = "=0.7.1"
+writeable = "=0.5.2"
 
 [dev-dependencies]
 reqwest = "0.11"
