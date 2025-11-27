@@ -4,45 +4,52 @@ description = "An HTTP server wrapper for omnisette. Supports both V1 (Provision
 version = "1.0.0-beta.1"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 omnisette = { git = "https://github.com/SideStore/apple-private-apis.git", features = ["async"] }
 
-actix = "0.13"
-actix-web = { version = "4.2.1", features = ["openssl"] }
-actix-http = "3.0.1"
-openssl = { version = "0.10", features = ["vendored"] }
-actix-web-actors = "4"
+# --- STRICT PINS FOR RUST 1.70.0 COMPATIBILITY ---
+# The '=' sign forces the exact version. Do not remove it.
 
+# Web Framework
+actix = "=0.13.0"
+actix-web = { version = "=4.2.1", features = ["openssl"] }
+actix-http = "=3.3.1"
+actix-web-actors = "=4.2.0"
+
+# Core Utilities
+time = "=0.3.28"
+chrono = "=0.4.28"
+url = "=2.4.1"
+idna = "=0.4.0"
+uuid = { version = "=1.4.1", features = ["v4", "fast-rng", "macro-diagnostics"] }
+parking_lot = "=0.12.1"
+lock_api = "=0.4.10"
+
+# Encryption & Data
+openssl = { version = "0.10", features = ["vendored"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-
-anyhow = "1.0"
 base64 = "0.21"
 bytestring = "1.3"
-parking_lot = "0.12.4"
-clap = { version = "4.1", features = ["derive"] }
-chrono = "0.4.31"
+hex = "0.4"
+sha2 = "0.10"
+rand = "0.8"
 const_format = "0.2"
 once_cell = "1.17"
+anyhow = "1.0"
+clap = { version = "4.1", features = ["derive"] }
 
+# Logging
 log = "0.4"
 simplelog = "0.12"
 
-# dependencies required to manually create ADIProxyAnisetteProvider (used for identifier)
-rand = "0.8"
-hex = "0.4"
-sha2 = "0.10"
-uuid = { version = "1.8.0", features = ["v4", "fast-rng", "macro-diagnostics"] }
-lock_api = "0.4.13"
-icu = "1.4.1"
+# Transitive Fixes (preventing other libraries from pulling new versions)
+icu_list = "=1.2.0" 
+icu_provider = "=1.2.0"
 
 [dev-dependencies]
 reqwest = "0.11"
-plist = "1.4.0"
+plist = "=1.5.0"
 async-trait = "0.1"
 awc = "3"
-futures-util = { version = "0.3", features = [
-    "sink", # sink feature might not be required
-] }
+futures-util = { version = "0.3", features = ["sink"] }
