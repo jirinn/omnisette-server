@@ -10,7 +10,7 @@ COPY Cargo.* ./
 
 COPY src ./src
 
-RUN cargo update
+RUN cargo update && cargo update -p parking_lot_core --precise 0.9.11
 
 ENV CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
 
