@@ -34,7 +34,7 @@ simplelog = "0.12"
 rand = "0.8"
 hex = "0.4"
 sha2 = "0.10"
-uuid = { version = "1.3", features = ["v4", "fast-rng", "macro-diagnostics"] }
+uuid = { version = "1.8.0", features = ["v4", "fast-rng", "macro-diagnostics"] }
 lock_api = "0.4.13"
 
 [dev-dependencies]
