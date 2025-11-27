@@ -1,4 +1,4 @@
-FROM rust:slim-bullseye AS builder
+FROM rust:latest AS builder
 
 RUN apt-get update && apt-get install --no-install-recommends -y perl make && \
     apt-get clean && \
