@@ -36,6 +36,7 @@ hex = "0.4"
 sha2 = "0.10"
 uuid = { version = "1.8.0", features = ["v4", "fast-rng", "macro-diagnostics"] }
 lock_api = "0.4.13"
+icu = "1.4.1"
 
 [dev-dependencies]
 reqwest = "0.11"
