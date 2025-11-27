@@ -17,7 +17,7 @@ ENV CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
 RUN cargo build --release
 
 
-FROM debian:bullseye-slim AS runtime
+FROM debian:bookworm-slim AS runtime
 
 RUN apt-get update && apt-get install --no-install-recommends -y unzip curl ca-certificates && \
     apt-get clean && \
